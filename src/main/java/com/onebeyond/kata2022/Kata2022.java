@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class Kata2022 {
 
-    private static final int NUMBER_OF_EXECUTIONS = 100;
+    private static final int NUMBER_OF_EXECUTIONS = 1000;
 
     private static final String INPUT = "";
 
@@ -25,7 +25,7 @@ public class Kata2022 {
         Long fastestTime = timeAndSolutionPerTeamSorted.stream().filter(it -> !it.getValue().getRight().equals(-1L)).findFirst().map(it -> it.getValue().getRight()).orElseThrow(() -> new RuntimeException("No implementations with correct result"));
         List<List<String>> table = createTableToBePrintedWithValues(timeAndSolutionPerTeamSorted, fastestTime);
         System.out.println();
-        System.out.println("These are the results for " + NUMBER_OF_EXECUTIONS + " of executions");
+        System.out.println("These are the results for " + NUMBER_OF_EXECUTIONS + " executions");
         System.out.println();
         printTableWithValues(table);
     }
