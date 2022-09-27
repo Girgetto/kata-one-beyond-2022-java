@@ -30,10 +30,12 @@ public class Kata2022 {
     }
 
     private List<List<String>> createTableToBePrintedWithValues(List<Map.Entry<String, Pair<String, Long>>> timeAndSolutionPerTeamSorted, Long fastestTime) {
+        double fastestExecutionTimeInNanoSeconds = ((double) fastestTime) / NUMBER_OF_EXECUTIONS;
         List<List<String>> table = new ArrayList<>();
-        table.add(Lists.newArrayList("Team", "Nanoseconds", "Difference with fastest", "Result"));
+        table.add(Lists.newArrayList("Team", "Nanoseconds / execution (mean)", "Difference with fastest", "Result"));
         for (Map.Entry<String, Pair<String, Long>> item : timeAndSolutionPerTeamSorted) {
-            table.add(Lists.newArrayList(item.getKey(), String.valueOf(item.getValue().getRight()), String.valueOf(item.getValue().getRight() - fastestTime), item.getValue().getLeft()));
+            double timePerExecutionInNanoseconds = (double) item.getValue().getRight() / NUMBER_OF_EXECUTIONS;
+            table.add(Lists.newArrayList(item.getKey(), String.valueOf(timePerExecutionInNanoseconds), String.valueOf(timePerExecutionInNanoseconds - fastestExecutionTimeInNanoSeconds), item.getValue().getLeft()));
         }
         return table;
     }
