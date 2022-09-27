@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import de.vandermeer.asciitable.AsciiTable;
 import org.apache.commons.lang3.tuple.Pair;
 import org.reflections.Reflections;
-import org.reflections.util.ConfigurationBuilder;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -32,7 +31,7 @@ public class Kata2022 {
 
     private List<List<String>> createTableToBePrintedWithValues(List<Map.Entry<String, Pair<String, Long>>> timeAndSolutionPerTeamSorted, Long fastestTime) {
         List<List<String>> table = new ArrayList<>();
-        table.add (Lists.newArrayList("Team", "Nanoseconds", "Difference with fastest", "Result"));
+        table.add(Lists.newArrayList("Team", "Nanoseconds", "Difference with fastest", "Result"));
         for (Map.Entry<String, Pair<String, Long>> item : timeAndSolutionPerTeamSorted) {
             table.add(Lists.newArrayList(item.getKey(), String.valueOf(item.getValue().getRight()), String.valueOf(item.getValue().getRight() - fastestTime), item.getValue().getLeft()));
         }
@@ -61,7 +60,7 @@ public class Kata2022 {
         Set<MorseDecoder> implementations = getSolutionImplementations();
         for (int i = 0; i < NUMBER_OF_EXECUTIONS; i++) {
             for (MorseDecoder implementation : implementations) {
-                String teamsName = implementation.getClass().getSimpleName();
+                String teamsName = getTeamsName(implementation);
                 try {
                     long startTime = System.nanoTime();
                     String result = implementation.decodeMisteryMessage(INPUT);
@@ -80,9 +79,13 @@ public class Kata2022 {
         return durationsPerTeam;
     }
 
+    private String getTeamsName(MorseDecoder implementation) {
+        return implementation.getClass().getSimpleName().replaceAll("MorseDecoder", "");
+    }
+
     private void removeFromValidImplementationsIfFailed(Set<MorseDecoder> implementations, String teamsName, Pair<String, Long> pairForTeam) {
         if (pairForTeam.getValue().equals(-1L)) {
-            implementations.removeIf(it -> it.getClass().getSimpleName().equals(teamsName));
+            implementations.removeIf(it -> getTeamsName(it).equals(teamsName));
         }
     }
 
