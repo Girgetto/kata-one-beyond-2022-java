@@ -68,7 +68,7 @@ requirements, like mantainability and readibility. Just try to create the fastes
 
 # Winner determination
 
-We'll decode the example morse message `.-- .... .- -   .... .- - ....   --. --- -..   .-- .-. --- ..- --. .... -` 1000 times with every implementation. The fastest one will win.
+We'll decode the example morse message `.-- .... .- -   .... .- - ....   --. --- -..   .-- .-. --- ..- --. .... -` 1000 times with every implementation. The fastest correct one will win.
 
 # How to run
 
