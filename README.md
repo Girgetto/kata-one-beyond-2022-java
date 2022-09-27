@@ -1,7 +1,9 @@
 # Prerequisites
 
+One of the following is enough to run the implementation:
+
 * Java 1.8 or higher + Maven
-* Or Docker
+* Docker
 
 # What to do
 
