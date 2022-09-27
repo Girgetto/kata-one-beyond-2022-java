@@ -2,7 +2,6 @@
 
 * Java 1.8 or higher + Maven
 * Or Docker
-* IDE or text editor of your choice
 
 # What to do
 
