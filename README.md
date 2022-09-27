@@ -66,6 +66,10 @@ The goal is to create the **fastest** solution. Don't waste time creating a nice
 This is probably not how you would code in a real project, since there probably are other 
 requirements, like mantainability and readibility. Just try to create the fastes implementation you can.
 
+# Winner determination
+
+We'll decode the example morse message `.-- .... .- -   .... .- - ....   --. --- -..   .-- .-. --- ..- --. .... -` 1000 times with every implementation. The fastest one will urn.
+
 # How to build and run with Java
 
 ```
