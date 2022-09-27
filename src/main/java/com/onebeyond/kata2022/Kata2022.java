@@ -13,7 +13,7 @@ public class Kata2022 {
 
     private static final int NUMBER_OF_EXECUTIONS = 1000;
 
-    private static final String INPUT = "";
+    private static final String INPUT = ".-- .... .- -   .... .- - ....   --. --- -..   .-- .-. --- ..- --. .... -";
 
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
         Kata2022 kata2022 = new Kata2022();
