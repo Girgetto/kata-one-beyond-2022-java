@@ -55,7 +55,7 @@ We want to write a Morse decoder. You need to have in mind:
 # Where to put your solution
 
 * Don't modify any file in the project. Any pull request that changes any of the existing files will be disqualified. 
-* Add your solution to a new file in the `src.main.java.com.onebeyond.kata2022.solutions` package (`src/main/java/com/onebeyond/kata2022/solutions/` folder)
+* Add your solution to a new file in the `com.onebeyond.kata2022.solutions` package (`src/main/java/com/onebeyond/kata2022/solutions/` folder)
   * Name of the file: `YourTeamNameMorseDecoder.java` (substitute `YourTeamName` by your team's name).
   * This class should implement the `MorseDecoder` interface.
   * You need to override the `decodeMisteryMessage` method providing your team's implementation of the Morse Decoder.
@@ -70,14 +70,20 @@ requirements, like mantainability and readibility. Just try to create the fastes
 
 We'll decode the example morse message `.-- .... .- -   .... .- - ....   --. --- -..   .-- .-. --- ..- --. .... -` 1000 times with every implementation. The fastest one will win.
 
-# How to build and run with Java
+# How to run
+
+## From your IDE
+
+Just run the `com.onebeyond.kata2022.Kata2022` class
+
+## How to build and run with Java
 
 ```
 mvn clean package
 java -jar -Dorg.slf4j.simpleLogger.defaultLogLevel=error target/kata-one-beyond-2022-java-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
-# How to build and run with Docker
+## How to build and run with Docker
 
 ```
 docker build -t YOUR_NAME/kata-java:latest
