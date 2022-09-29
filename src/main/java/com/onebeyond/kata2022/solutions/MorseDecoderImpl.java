@@ -52,10 +52,11 @@ public class MorseDecoderImpl implements MorseDecoder {
 
     @Override
     public String decodeMisteryMessage(String inputMessage) {
-        return Arrays.stream(inputMessage.split(Pattern.quote("   "))).map(w -> Arrays.stream(w.split(Pattern.quote(" ")))
+        return Arrays.stream(inputMessage.split(Pattern.quote("   ")))
+                .map(w -> Arrays.stream(w.split(Pattern.quote(" ")))
                 .map(letter -> morse.getOrDefault(letter, ""))
-                .collect(Collectors.joining())
-        ).collect(Collectors.joining(" "));
+                .collect(Collectors.joining()))
+                .collect(Collectors.joining(" "));
     }
 
 
