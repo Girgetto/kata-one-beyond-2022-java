@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class VippDaavMorseDecoder implements MorseDecoder {
+public class SkunkVippAlarcon implements MorseDecoder {
 
     String dictionaryString = ".-     => a\n" +
             "-...   => b\n" +
@@ -45,7 +45,7 @@ public class VippDaavMorseDecoder implements MorseDecoder {
             "----.  => 9\n" +
             "-----  => 0";
     private Map<String, String> dictionary;
-    public VippDaavMorseDecoder() {
+    public SkunkVippAlarcon() {
         this.dictionary = new HashMap<>();
         Arrays.stream(this.dictionaryString.split("\n")).forEach((value) -> {
             String[] values = value.split("  => ");

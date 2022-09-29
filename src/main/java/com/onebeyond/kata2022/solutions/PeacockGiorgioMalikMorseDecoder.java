@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class MorseDecoderImpl implements MorseDecoder {
+public class PeacockGiorgioMalikMorseDecoder implements MorseDecoder {
     static Map<String, String> morse = new HashMap<>();
 
     static {
